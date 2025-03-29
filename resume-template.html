@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIspire - Your Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Inter', sans-serif;
+        }
+        @media print {
+            .no-print {
+                display: none;
+            }
+            body {
+                padding: 0;
+                margin: 0;
+            }
+            .resume-container {
+                box-shadow: none;
+                border: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="max-w-4xl mx-auto py-8 px-4">
+        <!-- Resume Controls -->
+        <div class="no-print flex justify-between items-center mb-6 bg-white p-4 rounded-lg shadow-sm">
+            <a href="resume-builder.html" class="flex items-center text-indigo-600 hover:text-indigo-800">
+                <i class="fas fa-arrow-left mr-2"></i> Back to Editor
+            </a>
+            <div class="flex space-x-4">
+                <button onclick="window.print()" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">
+                    <i class="fas fa-print mr-2"></i> Print
+                </button>
+                <button id="download-pdf" class="px-4 py-2 bg-white border border-indigo-600 text-indigo-600 rounded-md hover:bg-indigo-50">
+                    <i class="fas fa-file-pdf mr-2"></i> Download PDF
+                </button>
+            </div>
+        </div>
+
+        <!-- Resume Content -->
+        <div id="resume-content" class="resume-container bg-white p-8 rounded-lg shadow-md">
+            <!-- Header Section -->
+            <div class="border-b border-gray-200 pb-6 mb-6">
+                <h1 id="resume-name" class="text-3xl font-bold text-gray-900 mb-1">John Doe</h1>
+                <div class="flex flex-wrap gap-x-4 gap-y-2 text-gray-600">
+                    <span id="resume-email">john.doe@example.com</span>
+                    <span id="resume-phone">(123) 456-7890</span>
+                    <span id="resume-linkedin">linkedin.com/in/johndoe</span>
+                </div>
+            </div>
+
+            <!-- Summary Section -->
+            <div class="mb-6">
+                <h2 class="text-xl font-semibold text-gray-900 border-b border-gray-200 pb-1 mb-3">SUMMARY</h2>
+                <p id="resume-summary" class="text-gray-700">Experienced professional with 5+ years in the industry. Skilled in project management, team leadership, and strategic planning. Proven track record of delivering successful projects on time and within budget.</p>
+            </div>
+
+            <!-- Experience Section -->
+            <div class="mb-6">
+                <h2 class="text-xl font-semibold text-gray-900 border-b border-gray-200 pb-1 mb-3">WORK EXPERIENCE</h2>
+                <div id="resume-experience">
+                    <div class="mb-4">
+                        <div class="flex justify-between">
+                            <h3 class="font-semibold text-gray-800">Senior Project Manager</h3>
+                            <span class="text-gray-600">Jan 2019 - Present</span>
+                        </div>
+                        <div class="flex justify-between text-gray-700 mb-1">
+                            <span>ABC Corporation</span>
+                            <span>New York, NY</span>
+                        </div>
+                        <ul class="list-disc pl-5 text-gray-700 space-y-1 mt-2">
+                            <li>Led cross-functional teams of 10+ members to deliver complex projects</li>
+                            <li>Implemented new project management processes that reduced delivery times by 20%</li>
+                            <li>Managed budgets up to $2M with consistent on-budget performance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Section -->
+            <div class="mb-6">
+                <h2 class="text-xl font-semibold text-gray-900 border-b border-gray-200 pb-1 mb-3">EDUCATION</h2>
+                <div id="resume-education">
+                    <div class="flex justify-between mb-1">
+                        <h3 class="font-semibold text-gray-800">Master of Business Administration</h3>
+                        <span class="text-gray-600">2016 - 2018</span>
+                    </div>
+                    <div class="text-gray-700">
+                        <p>University of California, Los Angeles</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="mb-6">
+                <h2 class="text-xl font-semibold text-gray-900 border-b border-gray-200 pb-1 mb-3">SKILLS</h2>
+                <div id="resume-skills" class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full">Project Management</span>
+                    <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full">Team Leadership</span>
+                    <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full">Strategic Planning</span>
+                    <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full">Budget Management</span>
+                </div>
+            </div>
+
+            <!-- Certifications Section -->
+            <div>
+                <h2 class="text-xl font-semibold text-gray-900 border-b border-gray-200 pb-1 mb-3">CERTIFICATIONS</h2>
+                <div id="resume-certifications">
+                    <div class="mb-2">
+                        <h3 class="font-medium text-gray-800">Project Management Professional (PMP)</h3>
+                        <p class="text-gray-600">Project Management Institute - 2017</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        // This will be populated with the actual resume data from the form
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get resume data from URL parameters or localStorage
+            // For now using placeholder data
+        });
+
+        // PDF Generation
+        document.getElementById('download-pdf').addEventListener('click', function() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            // Get HTML content of resume
+            const resumeContent = document.getElementById('resume-content').innerHTML;
+            
+            // Convert HTML to PDF (simplified example)
+            doc.html(resumeContent, {
+                callback: function(doc) {
+                    doc.save('resume.pdf');
+                },
+                x: 10,
+                y: 10,
+                width: 190, // A4 width in mm
+                windowWidth: 800 // window width in CSS pixels
+            });
+        });
+    </script>
+</body>
+</html>
