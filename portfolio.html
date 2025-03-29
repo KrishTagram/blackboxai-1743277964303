@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIspire - Portfolio Builder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Inter', sans-serif;
+        }
+        .portfolio-item {
+            transition: all 0.3s ease;
+        }
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-bold text-indigo-600">AIspire</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-indigo-600">Templates</a>
+                    <a href="#" class="text-gray-700 hover:text-indigo-600">Examples</a>
+                    <a href="#" class="px-4 py-2 rounded-md bg-indigo-600 text-white hover:bg-indigo-700">Publish</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="mb-12">
+            <h1 class="text-3xl font-bold text-gray-900 mb-4">Build Your Portfolio</h1>
+            <p class="text-lg text-gray-600">Select a template and customize it to showcase your work</p>
+        </div>
+
+        <!-- Template Selection -->
+        <div class="mb-12">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-6">Choose a Template</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="portfolio-item bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 bg-indigo-100"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Minimal</h3>
+                        <p class="text-gray-600 mb-4">Clean and simple design that puts focus on your work</p>
+                        <button class="w-full px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">Select</button>
+                    </div>
+                </div>
+                <div class="portfolio-item bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 bg-blue-100"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Creative</h3>
+                        <p class="text-gray-600 mb-4">Modern layout with bold typography and colors</p>
+                        <button class="w-full px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">Select</button>
+                    </div>
+                </div>
+                <div class="portfolio-item bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 bg-purple-100"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Professional</h3>
+                        <p class="text-gray-600 mb-4">Elegant design suitable for corporate portfolios</p>
+                        <button class="w-full px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">Select</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Sections -->
+        <div class="bg-white shadow rounded-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Your Portfolio Content</h2>
+            
+            <!-- About Section -->
+            <div class="mb-8">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">About You</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Profile Photo</label>
+                        <div class="flex items-center">
+                            <div class="h-16 w-16 rounded-full bg-gray-200"></div>
+                            <button class="ml-4 px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50">Upload</button>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Bio</label>
+                        <textarea rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" placeholder="Tell visitors about yourself and your work"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Section -->
+            <div class="mb-8">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-semibold text-gray-800">Your Projects</h3>
+                    <button class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">Add Project</button>
+                </div>
+                <div class="space-y-6">
+                    <div class="p-4 border border-gray-200 rounded-md">
+                        <div class="grid md:grid-cols-4 gap-4">
+                            <div class="h-32 bg-gray-100 rounded-md"></div>
+                            <div class="md:col-span-3">
+                                <input type="text" class="w-full px-4 py-2 border-b border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 mb-2" placeholder="Project Title">
+                                <textarea rows="2" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" placeholder="Project description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 border border-gray-200 rounded-md">
+                        <div class="grid md:grid-cols-4 gap-4">
+                            <div class="h-32 bg-gray-100 rounded-md"></div>
+                            <div class="md:col-span-3">
+                                <input type="text" class="w-full px-4 py-2 border-b border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 mb-2" placeholder="Project Title">
+                                <textarea rows="2" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" placeholder="Project description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">Contact Information</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <input type="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+                        <input type="tel" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Website</label>
+                        <input type="url" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Social Media</label>
+                        <div class="flex space-x-2">
+                            <input type="text" class="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" placeholder="LinkedIn">
+                            <input type="text" class="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" placeholder="Twitter">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-end">
+            <button class="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">Save & Preview</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">AIspire</h3>
+                    <p class="text-gray-400">Helping professionals build their digital presence since 2023.</p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider mb-4">Product</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Features</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Templates</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Webinars</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400 text-sm">
+                <p>© 2023 AIspire. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
